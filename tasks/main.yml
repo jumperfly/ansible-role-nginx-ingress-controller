@@ -1,0 +1,7 @@
+- name: Deploy nginx ingress controller
+  k8s:
+    kubeconfig: /etc/kubernetes/kubeconfig-local
+    definition: "{{ item }}"
+  loop_control:
+    label: "{{ item.kind }}/{{ item.metadata.name }}"
+  loop: "{{ nginx_ingress_definition }}"

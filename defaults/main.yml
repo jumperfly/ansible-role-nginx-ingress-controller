@@ -1,0 +1,6 @@
+nginx_ingress_cluster_ip: 10.0.0.20
+nginx_ingress_nodeport_http: 30080
+nginx_ingress_nodeport_https: 30443
+nginx_ingress_external_name: www.example.com
+nginx_ingress_external_ip: 192.168.0.1
+nginx_ingress_cert_subject_common_name: "{{ nginx_ingress_external_name }}"

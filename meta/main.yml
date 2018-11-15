@@ -1,0 +1,21 @@
+dependencies:
+  - src: jumperfly.ssl_cert
+    version: v0.3.0
+    ssl_cert_ca_type: acme-http
+    ssl_cert_storage: k8s-secret
+    ssl_cert_type: server
+    ssl_cert_name: nginx-ingress-default
+    ssl_cert_subject_common_name: "{{ nginx_ingress_cert_subject_common_name }}"
+    ssl_cert_k8s_secret_name: nginx-ingress-default-certs
+    ssl_cert_k8s_secret_namespace: default
+
+galaxy_info:
+  role_name: nginx_ingress_controller
+  author: jumperfly
+  description: ansible-role-nginx-ingress-controller
+  license: Apache
+  min_ansible_version: "2.0"
+  platforms:
+    - name: EL
+      versions:
+        - "7"
